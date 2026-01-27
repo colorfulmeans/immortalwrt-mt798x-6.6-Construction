@@ -1,6 +1,9 @@
+# 使用defconfig/mt7975-ipailna-high-power.config 整理而来，与mt7986-ax6000.config 略有不同，属于特定机型的专用config，请勿混用
+# 整理时间 2026年 1.27
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_filogic=y
 CONFIG_TARGET_mediatek_filogic_DEVICE_clx_s20p=y
+# CONFIG_TARGET_mediatek_filogic_DEVICE_netcore_n60-pro=y
 CONFIG_DEVEL=y
 CONFIG_TOOLCHAINOPTS=y
 CONFIG_BUSYBOX_CUSTOM=y
