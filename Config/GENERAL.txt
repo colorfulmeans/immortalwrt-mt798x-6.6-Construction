@@ -5,49 +5,40 @@ CONFIG_PACKAGE_luci-app-ssr-plus=n
 # CONFIG_PACKAGE_luci-app-homeproxy=y
 # CONFIG_PACKAGE_luci-app-momo=y
 # CONFIG_PACKAGE_luci-app-nikki=y
-CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_PACKAGE_luci-app-openclash=n
 
-# passwall编译
-# CONFIG_PACKAGE_luci-app-passwall=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Geoview=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server is not set
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Server is not set
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadow_TLS=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_tuic_client is not set
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=y
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin is not set
+# passwall编译（全部关闭）
+CONFIG_PACKAGE_luci-app-passwall=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Geoview=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_NaiveProxy=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Server=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadow_TLS=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geodata=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray=n
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray_Plugin=n
 
-#passwall2编译
-# CONFIG_PACKAGE_luci-app-passwall2=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Haproxy=y
-# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Hysteria is not set
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_NaiveProxy=y
-# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Libev_Client is not set
-# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Libev_Server is not set
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Client=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Server=y
-# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Client is not set
-# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_ShadowsocksR_Libev_Server is not set
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Simple_Obfs=y
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_SingBox=y
-# CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_tuic_client is not set
-CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_V2ray_Plugin=y
+#passwall2编译（全部关闭）
+CONFIG_PACKAGE_luci-app-passwall2=n
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Haproxy=n
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Hysteria=n
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_NaiveProxy=n
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Client=n
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Shadowsocks_Rust_Server=n
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_Simple_Obfs=n
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_SingBox=n
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_tuic_client=n
+CONFIG_PACKAGE_luci-app-passwall2_INCLUDE_V2ray_Plugin=n
 
-CONFIG_PACKAGE_haproxy=y
-CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
-CONFIG_PACKAGE_shadowsocks-rust-ssserver=y
+# 代理相关依赖（关闭）
+CONFIG_PACKAGE_haproxy=n
+CONFIG_PACKAGE_shadowsocks-rust-sslocal=n
+CONFIG_PACKAGE_shadowsocks-rust-ssserver=n
 
 #增加插件
 CONFIG_PACKAGE_luci-app-wireguard=y
@@ -63,7 +54,7 @@ CONFIG_PACKAGE_luci-app-dockerman=y
 # CONFIG_PACKAGE_luci-app-netdata=y  #实时监控
 # CONFIG_PACKAGE_luci-app-oaf=y   #应用过滤(OAF)
 # CONFIG_PACKAGE_luci-app-mentohust=y  #锐捷验证
-CONFIG_PACKAGE_luci-app-vlmcsd=y  #kms
+CONFIG_PACKAGE_luci-app-vlmcsd=n  #kms（关闭）
 # CONFIG_PACKAGE_luci-app-ddns-go=y  #ddns-go
 # CONFIG_PACKAGE_luci-app-netspeedtest=y  #netspeedtest测速
 # CONFIG_PACKAGE_luci-app-fancontrol=y   #风扇控制
@@ -93,15 +84,17 @@ CONFIG_PACKAGE_luci-app-uugamebooster=n
 CONFIG_PACKAGE_luci-app-adbyby-plus=n
 CONFIG_PACKAGE_luci-app-attendedsysupgrade=n
 
-#网络分享
+#网络分享（用 ksmbd，不用 samba4）
 CONFIG_PACKAGE_autosamba=n
 CONFIG_PACKAGE_samba36-server=n
 CONFIG_PACKAGE_luci-app-samba=n
+CONFIG_PACKAGE_samba4-server=n
 CONFIG_PACKAGE_luci-app-samba4=n
 CONFIG_PACKAGE_luci-app-vsftpd=n  #FTP服务器
-CONFIG_PACKAGE_luci-app-cifs-mount=n #挂载 SMB 网络共享
-CONFIG_PACKAGE_autoksmbd=n
-CONFIG_PACKAGE_luci-app-ksmbd=n
+CONFIG_PACKAGE_luci-app-cifs-mount=n #挂载 SMB 网络共享（客户端）
+CONFIG_PACKAGE_autoksmbd=y
+CONFIG_PACKAGE_ksmbd-server=y
+CONFIG_PACKAGE_luci-app-ksmbd=y
 
 # Themes
 CONFIG_PACKAGE_luci-theme-argon=y
@@ -122,12 +115,22 @@ CONFIG_PACKAGE_dosfstools=y
 CONFIG_PACKAGE_kmod-fs-exfat=y
 CONFIG_PACKAGE_exfat-mkfs=y
 
+# --- [新增] Btrfs 支持 ---
+CONFIG_PACKAGE_kmod-fs-btrfs=y
+CONFIG_PACKAGE_btrfs-progs=y
+
 # --- [可选] eMMC 工具 (如果是 eMMC 存储机型建议保留) ---
 CONFIG_PACKAGE_mmc-utils=y
 
-# --- [删除] 除非你有 M.2 接口，否则删除 ---
-# CONFIG_PACKAGE_kmod-nvme is not set
-# CONFIG_PACKAGE_pciutils is not set
+# --- [NVMe] S20P 需要 M.2/NVMe：开启 ---
+CONFIG_PACKAGE_kmod-nvme=y
+CONFIG_PACKAGE_pciutils=y
+
+# --- [建议] 基础磁盘工具（Diskman/挂载更稳） ---
+CONFIG_PACKAGE_block-mount=y
+CONFIG_PACKAGE_blkid=y
+CONFIG_PACKAGE_lsblk=y
+CONFIG_PACKAGE_fdisk=y
 
 # --- [删除] 除非你插手机/4G卡/外接网卡，否则删除 ---
 # CONFIG_PACKAGE_kmod-usb-net-rndis is not set
@@ -139,6 +142,3 @@ CONFIG_PACKAGE_mmc-utils=y
 # CONFIG_PACKAGE_kmod-usb-acm is not set
 # CONFIG_PACKAGE_kmod-usb-ohci is not set
 # CONFIG_PACKAGE_kmod-usb-uhci is not set
-
-
-
