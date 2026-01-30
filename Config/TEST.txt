@@ -1,16 +1,22 @@
-#设备平台
+# 设备平台
 CONFIG_TARGET_mediatek=y
-CONFIG_TARGET_mediatek_mt7981=y
-#设备列表
-CONFIG_TARGET_DEVICE_mediatek_mt7981_DEVICE_jcg_q30=y
-#插件调整
-CONFIG_PACKAGE_luci-app-passwall=y
-CONFIG_PACKAGE_luci-app-mosdns=y
-CONFIG_PACKAGE_luci-app-mwan3=y
-#必选组件，请勿修改
-CONFIG_first_card_name="MT7981"
-CONFIG_MTK_CHIP_MT7981=y
-CONFIG_MTK_CONNINFRA_APSOC_MT7981=y
-CONFIG_MTK_FIRST_IF_MT7981=y
-CONFIG_MTK_MT7981_NEW_FW=y
-CONFIG_WARP_CHIPSET="mt7981"
+CONFIG_TARGET_mediatek_mt7986=y
+
+# 设备列表（S20P）
+CONFIG_TARGET_DEVICE_mediatek_mt7986_DEVICE_clx_s20p=y
+
+# 插件：全部科学上网相关必须关闭（避免拉大依赖、云编译超时）
+CONFIG_PACKAGE_luci-app-passwall=n
+CONFIG_PACKAGE_luci-app-openclash=n
+CONFIG_PACKAGE_luci-app-ssr-plus=n
+
+# 你不需要的也关掉（按你前面要求：KMS 关闭）
+CONFIG_PACKAGE_luci-app-vlmcsd=n
+
+# 必选组件（芯片标识：改成 MT7986）
+CONFIG_first_card_name="MT7986"
+CONFIG_MTK_CHIP_MT7986=y
+CONFIG_MTK_CONNINFRA_APSOC_MT7986=y
+CONFIG_MTK_FIRST_IF_MT7986=y
+CONFIG_MTK_MT7986_NEW_FW=y
+CONFIG_WARP_CHIPSET="mt7986"
