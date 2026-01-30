@@ -48,12 +48,12 @@ CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-diskman=y
 CONFIG_PACKAGE_luci-app-dockerman=y
 
-# 文件管理（选择 FileBrowser）
+# 文件管理（FileBrowser）
 CONFIG_PACKAGE_luci-app-filebrowser=y
 CONFIG_PACKAGE_filebrowser=y
 CONFIG_PACKAGE_cgi-io=y
 
-# Tailscale（你明确需要）
+# Tailscale（本体 + LuCI）
 CONFIG_PACKAGE_tailscale=y
 CONFIG_PACKAGE_luci-app-tailscale-community=y
 
@@ -137,13 +137,53 @@ CONFIG_PACKAGE_lsblk=y
 CONFIG_PACKAGE_fdisk=y
 
 # =========================================================
-# USB 网络（4G 随身网卡 / 手机 USB 共享）
+# USB 基础工具（排障）
 # =========================================================
 
-CONFIG_PACKAGE_kmod-usb-net-rndis=y        # Android USB 共享
-CONFIG_PACKAGE_kmod-usb-net-ipheth=y       # iPhone USB 共享
-CONFIG_PACKAGE_kmod-usb-net-cdc-ether=y    # 通用 CDC-ECM
-CONFIG_PACKAGE_kmod-usb-net-cdc-ncm=y      # 华为 E8372H
-CONFIG_PACKAGE_kmod-usb-acm=y              # 控制接口
 CONFIG_PACKAGE_usbutils=y
+CONFIG_PACKAGE_usbids=y
 
+# =========================================================
+# USB 网络（手机 USB 共享 / 4G 5G 网卡）
+# 覆盖：RNDIS / ECM / NCM / MBIM / QMI / PPP(串口拨号)
+# =========================================================
+
+# --- 设备模式切换（很多 4G/5G 棒子默认“光驱模式”，需要切换到 Modem/网卡模式） ---
+CONFIG_PACKAGE_usb-modeswitch=y
+CONFIG_PACKAGE_usb-modeswitch-data=y
+
+# --- Android USB 共享（RNDIS） ---
+CONFIG_PACKAGE_kmod-usb-net-rndis=y
+
+# --- iPhone USB 共享（iPheth） ---
+CONFIG_PACKAGE_kmod-usb-net-ipheth=y
+
+# --- 通用 USB 网卡（ECM/CDC-Ether） ---
+CONFIG_PACKAGE_kmod-usb-net-cdc-ether=y
+
+# --- 通用 USB 网卡（NCM）/ 例如部分华为随身网卡、部分 4G/5G CPE ---
+CONFIG_PACKAGE_kmod-usb-net-cdc-ncm=y
+
+# --- MBIM（很多 4G/5G 模块常用） ---
+CONFIG_PACKAGE_kmod-usb-net-cdc-mbim=y
+CONFIG_PACKAGE_kmod-usb-wdm=y
+CONFIG_PACKAGE_umbim=y
+CONFIG_PACKAGE_luci-proto-mbim=y
+
+# --- QMI（移远/广和通/部分中兴等常用） ---
+CONFIG_PACKAGE_kmod-usb-net-qmi-wwan=y
+CONFIG_PACKAGE_uqmi=y
+CONFIG_PACKAGE_luci-proto-qmi=y
+
+# --- 串口/AT/PPP 拨号支持（遇到只有 ttyUSB* 没有网卡接口时会用到） ---
+CONFIG_PACKAGE_kmod-usb-acm=y
+CONFIG_PACKAGE_kmod-usb-serial=y
+CONFIG_PACKAGE_kmod-usb-serial-wwan=y
+CONFIG_PACKAGE_kmod-usb-serial-option=y
+CONFIG_PACKAGE_ppp=y
+CONFIG_PACKAGE_ppp-mod-pppoe=y
+CONFIG_PACKAGE_ppp-mod-pppol2tp=y
+CONFIG_PACKAGE_ppp-mod-pptp=y
+CONFIG_PACKAGE_chat=y
+CONFIG_PACKAGE_comgt=y
+CONFIG_PACKAGE_luci-proto-3g=y
