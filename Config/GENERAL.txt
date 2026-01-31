@@ -53,9 +53,20 @@ CONFIG_PACKAGE_luci-app-filebrowser=y
 CONFIG_PACKAGE_filebrowser=y
 CONFIG_PACKAGE_cgi-io=y
 
-# Tailscale（你明确需要）
+# ---------------------------------------------------------
+# Tailscale（补齐：daemon + tun + LuCI）
+# 你之前只有 tailscale 客户端，缺 tailscaled，所以无法运行
+# ---------------------------------------------------------
 CONFIG_PACKAGE_tailscale=y
+CONFIG_PACKAGE_tailscaled=y
+CONFIG_PACKAGE_kmod-tun=y
 CONFIG_PACKAGE_luci-app-tailscale-community=y
+
+# ---------------------------------------------------------
+# 多 WAN 自动切换（USB 网卡 / Wi-Fi 中继）
+# ---------------------------------------------------------
+CONFIG_PACKAGE_mwan3=y
+CONFIG_PACKAGE_luci-app-mwan3=y
 
 # 网络与系统工具
 CONFIG_PACKAGE_luci-app-socat=y
